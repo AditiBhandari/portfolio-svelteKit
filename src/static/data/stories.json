@@ -1,0 +1,29 @@
+[
+	{
+		"link": "https://graphics.reuters.com/PARALYMPICS-2022/EQUIPMENT/dwpkrlmnrvm/",
+		"slug": "Culture",
+		"title": "Built to win",
+		"description": "The adaptive sports tools powering the 2022 Winter Paralympics.",
+		"publication": "Reuters",
+		"year": 2022,
+		"thumbnail": "https://graphics.reuters.com/PARALYMPICS-2022/EQUIPMENT/dwpkrlmnrvm/cdn/images/reuters-graphics.jpg"
+	},
+	{
+		"link": "https://graphics.reuters.com/GLOBAL-RACE/BTS-FANS/nmopajgmxva/",
+		"slug": "Culture",
+		"title": "BTS ARMY's fundraising power",
+		"description": "Interviewed BTS fans and experts, created the data graphics and designed and built the page. It won an Award of Excellence at the SND: Best of Digital News Design awards, and BTS fans showed their love on Twitter.",
+		"publication": "Reuters",
+		"year": 2020,
+		"thumbnail": "https://graphics.reuters.com/GLOBAL-RACE/BTS-FANS/nmopajgmxva/img/share-card.png"
+	},
+	{
+		"link": "https://graphics.reuters.com/MYANMAR-POLITICS/zjpqkkoaqpx/",
+		"slug": "Conflict",
+		"title": "Myanmar protest deaths",
+		"description": "The tragedy still unfolding in Myanmar, told through the profiles of seven people who died after the military cracked down on protests after the 2021 coup.",
+		"publication": "Reuters",
+		"year": 2021,
+		"thumbnail": "https://graphics.reuters.com/MYANMAR-POLITICS/zjpqkkoaqpx/img/share.png"
+	}
+]
