@@ -1,34 +1,7 @@
 <script>
 	export let activePage;
 
-	let socialList = {
-		socials: [
-			{
-				type: "Twitter",
-				link: "https://twitter.com/AditiHBhandari",
-				ariaLabel: "Follow me on Twitter",
-				icon: "fa-twitter",
-			},
-			{
-				type: "GitHub",
-				link: "https://github.com/AditiBhandari",
-				ariaLabel: "See my work on Github",
-				icon: "fa-github-alt",
-			},
-			{
-				type: "LinkedIn",
-				link: "https://www.linkedin.com/in/aditihbhandari",
-				ariaLabel: "Connect with me on LinkedIn",
-				icon: "fa-linkedin-in",
-			},
-			{
-				type: "Email",
-				link: "mailto:aditibhandari95@gmail.com",
-				ariaLabel: "Email me at aditibhandari95@gmail.com",
-				icon: "fa-google",
-			},
-		],
-	};
+	import socialList from "../static/data/socials.json";
 </script>
 
 <header>
@@ -62,7 +35,7 @@
 		</ul>
 
 		<ul aria-label="Social media menu">
-			{#each socialList.socials as social}
+			{#each socialList as social}
 				<li>
 					<a
 						class="social_link"
