@@ -3,7 +3,7 @@
 	import Footer from "$lib/Footer.svelte";
 </script>
 
-<Header projectsActive="link_active"/>
+<Header activePage="projects" />
 
 <main>
 	<section>

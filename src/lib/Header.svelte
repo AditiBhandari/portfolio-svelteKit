@@ -1,57 +1,81 @@
 <script>
-	export let workActive;
-	export let projectsActive;
+	export let activePage;
 
 	let socialList = {
-		"socials": [
+		socials: [
 			{
-				"type": "Twitter",
-				"link": "https://twitter.com/AditiHBhandari",
-				"ariaLabel": "Follow me on Twitter",
-				"icon": "fa-twitter"
+				type: "Twitter",
+				link: "https://twitter.com/AditiHBhandari",
+				ariaLabel: "Follow me on Twitter",
+				icon: "fa-twitter",
 			},
 			{
-				"type": "GitHub",
-				"link": "https://github.com/AditiBhandari",
-				"ariaLabel": "See my work on Github",
-				"icon": "fa-github-alt"
+				type: "GitHub",
+				link: "https://github.com/AditiBhandari",
+				ariaLabel: "See my work on Github",
+				icon: "fa-github-alt",
 			},
 			{
-				"type": "LinkedIn",
-				"link": "https://www.linkedin.com/in/aditihbhandari",
-				"ariaLabel": "Connect with me on LinkedIn",
-				"icon": "fa-linkedin-in"
+				type: "LinkedIn",
+				link: "https://www.linkedin.com/in/aditihbhandari",
+				ariaLabel: "Connect with me on LinkedIn",
+				icon: "fa-linkedin-in",
 			},
 			{
-				"type": "Email",
-				"link": "mailto:aditibhandari95@gmail.com",
-				"ariaLabel": "Email me at aditibhandari95@gmail.com",
-				"icon": "fa-google"
-			}
-		]
-		};
+				type: "Email",
+				link: "mailto:aditibhandari95@gmail.com",
+				ariaLabel: "Email me at aditibhandari95@gmail.com",
+				icon: "fa-google",
+			},
+		],
+	};
 </script>
 
 <header>
-
 	<nav class="menu">
-		
 		<ul aria-label="Page menu">
-			<li><h1 class="home_link"><a href="/" aria-label="Home page">aditi bhandari</a></h1></li>
-			<li><h2><a class="page_link {workActive}" href="/work" aria-label="See my work">work</a></h2></li>
-			<li><h2><a class="page_link {projectsActive}" href="/projects" aria-label="See my projects">projects</a></h2></li>
+			<li>
+				<h1 class="home_link">
+					<a href="/" aria-label="Home page">aditi bhandari</a>
+				</h1>
+			</li>
+			<li>
+				<h2>
+					<a
+						class={"page_link" +
+							(activePage === "work" && " link_active")}
+						href="/work"
+						aria-label="See my work">work</a
+					>
+				</h2>
+			</li>
+			<li>
+				<h2>
+					<a
+						class={"page_link" +
+							(activePage === "projects" && " link_active")}
+						href="/projects"
+						aria-label="See my projects">projects</a
+					>
+				</h2>
+			</li>
 		</ul>
 
 		<ul aria-label="Social media menu">
 			{#each socialList.socials as social}
 				<li>
-					<a class="social_link" href="{social.link}" target="_blank" rel="noopener noreferrer" aria-label="{social.ariaLabel}">
-						<i class="fab {social.icon}" aria-hidden="true"></i>
+					<a
+						class="social_link"
+						href={social.link}
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label={social.ariaLabel}
+					>
+						<i class="fab {social.icon}" aria-hidden="true" />
 					</a>
 				</li>
 			{/each}
 		</ul>
-
 	</nav>
 </header>
 
@@ -76,11 +100,11 @@
 		list-style: none;
 		/* padding-left: 1em;
 		padding-right: 1em; */
-		font-family: 'Biryani', sans-serif;
+		font-family: "Biryani", sans-serif;
 	}
 
-
-	h2 > a, li > a {
+	h2 > a,
+	li > a {
 		text-decoration: none;
 		font-weight: 300;
 		color: #737373;
@@ -88,7 +112,8 @@
 		margin-right: 0.75em;
 	}
 
-	h2 a:hover, li > a:hover {
+	h2 a:hover,
+	li > a:hover {
 		border-bottom: solid 4px #227f7f;
 		transition: border-bottom ease-in-out 0.1s;
 	}
@@ -109,7 +134,7 @@
 	.social_link {
 		font-size: 1.5em;
 		padding-left: 0.25em;
-    	padding-right: 0.25em;
+		padding-right: 0.25em;
 	}
 
 	.link_active {
@@ -118,11 +143,7 @@
 		font-weight: 700;
 	}
 
-
-
-
-
-		/*!
+	/*!
 	* Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com
 	* License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
 	*/
@@ -135,17 +156,24 @@
 		text-rendering: auto;
 		line-height: 1;
 	}
-	
-	
+
 	/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen readers do not read off random characters that represent icons */
-	.fa-github-alt:before { content: "\f113"; }
-	
-	.fa-google:before { content: "\f1a0"; }
-	
-	.fa-linkedin-in:before { content: "\f0e1"; }
-	
-	.fa-twitter:before { content: "\f099"; }
-	
+	.fa-github-alt:before {
+		content: "\f113";
+	}
+
+	.fa-google:before {
+		content: "\f1a0";
+	}
+
+	.fa-linkedin-in:before {
+		content: "\f0e1";
+	}
+
+	.fa-twitter:before {
+		content: "\f099";
+	}
+
 	.sr-only {
 		border: 0;
 		clip: rect(0, 0, 0, 0);
@@ -156,8 +184,9 @@
 		position: absolute;
 		width: 1px;
 	}
-  
-	.sr-only-focusable:active, .sr-only-focusable:focus {
+
+	.sr-only-focusable:active,
+	.sr-only-focusable:focus {
 		clip: auto;
 		height: auto;
 		margin: 0;
@@ -165,28 +194,39 @@
 		position: static;
 		width: auto;
 	}
-  
-  
+
 	@font-face {
-		font-family: 'Font Awesome 5 Brands';
+		font-family: "Font Awesome 5 Brands";
 		font-style: normal;
 		font-weight: 400;
 		font-display: block;
 		src: url("../static/webfonts/fa-brands-400.eot");
-		src: url("../static/webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("../static/webfonts/fa-brands-400.woff2") format("woff2"), url("../static/webfonts/fa-brands-400.woff") format("woff"), url("../static/webfonts/fa-brands-400.ttf") format("truetype"), url("../static/webfonts/fa-brands-400.svg#fontawesome") format("svg");
+		src: url("../static/webfonts/fa-brands-400.eot?#iefix")
+				format("embedded-opentype"),
+			url("../static/webfonts/fa-brands-400.woff2") format("woff2"),
+			url("../static/webfonts/fa-brands-400.woff") format("woff"),
+			url("../static/webfonts/fa-brands-400.ttf") format("truetype"),
+			url("../static/webfonts/fa-brands-400.svg#fontawesome")
+				format("svg");
 	}
-  
+
 	.fab {
-		font-family: 'Font Awesome 5 Brands';
+		font-family: "Font Awesome 5 Brands";
 		font-weight: 400;
 	}
 
 	@font-face {
-		font-family: 'Font Awesome 5 Free';
+		font-family: "Font Awesome 5 Free";
 		font-style: normal;
 		font-weight: 400;
 		font-display: block;
 		src: url("../static/webfonts/fa-regular-400.eot");
-		src: url("../static/webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("../static/webfonts/fa-regular-400.woff2") format("woff2"), url("../static/webfonts/fa-regular-400.woff") format("woff"), url("../static/webfonts/fa-regular-400.ttf") format("truetype"), url("../static/webfonts/fa-regular-400.svg#fontawesome") format("svg");
+		src: url("../static/webfonts/fa-regular-400.eot?#iefix")
+				format("embedded-opentype"),
+			url("../static/webfonts/fa-regular-400.woff2") format("woff2"),
+			url("../static/webfonts/fa-regular-400.woff") format("woff"),
+			url("../static/webfonts/fa-regular-400.ttf") format("truetype"),
+			url("../static/webfonts/fa-regular-400.svg#fontawesome")
+				format("svg");
 	}
 </style>
