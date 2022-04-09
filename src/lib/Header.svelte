@@ -1,4 +1,7 @@
 <script>
+	export let workActive;
+	export let projectsActive;
+
 	let socialList = {
 		"socials": [
 			{
@@ -30,94 +33,160 @@
 </script>
 
 <header>
-	<nav class="menu">
-		<a class="menu_home_link" href="/"><h1 class="menu_home_button">aditi bhandari</h1></a>
 
-		<ul class="menu_list">
-			<li class="menu_button"><h2><a class="page_link" href="/work">work</a></h2></li>
-			<li class="menu_button"><h2><a class="page_link" href="/projects">projects</a></h2></li>
+	<nav class="menu">
+		
+		<ul aria-label="Page menu">
+			<li><h1 class="home_link"><a href="/" aria-label="Home page">aditi bhandari</a></h1></li>
+			<li><h2><a class="page_link {workActive}" href="/work" aria-label="See my work">work</a></h2></li>
+			<li><h2><a class="page_link {projectsActive}" href="/projects" aria-label="See my projects">projects</a></h2></li>
 		</ul>
 
-		<ul class="menu_list">
+		<ul aria-label="Social media menu">
 			{#each socialList.socials as social}
-				<li class="menu_icon">
-					<a class="menu_link" href="{social.link}" target="_blank" rel="noopener noreferrer" aria-label="{social.ariaLabel}">
+				<li>
+					<a class="social_link" href="{social.link}" target="_blank" rel="noopener noreferrer" aria-label="{social.ariaLabel}">
 						<i class="fab {social.icon}" aria-hidden="true"></i>
-						<!-- <span class="sr-only">Do I need this?</span> -->
 					</a>
 				</li>
 			{/each}
 		</ul>
+
 	</nav>
 </header>
+
 <style>
-	.menu {
-		margin-bottom: 20px;
-		width: 1200px;
+	nav {
+		max-width: 1200px;
 		margin-left: auto;
 		margin-right: auto;
+		display: flex;
+		align-items: baseline;
 	}
 
-	.menu_list {
-		padding: 0;
-		margin: 0;
-		display: inline-block;
+	ul {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		padding-left: 0;
+		margin-top: 0;
 	}
 
-	.menu_home_button {
-		display: inline-block;
-		margin: 30px 30px 0px 0px;
-	}
-
-	.menu_button, .menu_icon {
+	li {
 		list-style: none;
-		display: inline-block;
+		/* padding-left: 1em;
+		padding-right: 1em; */
+		font-family: 'Biryani', sans-serif;
 	}
 
-	.fab {
-		padding-left: 12px;
-		padding-right: 12px;
+
+	h2 > a, li > a {
+		text-decoration: none;
+		font-weight: 300;
+		color: #737373;
+		margin-left: 0.75em;
+		margin-right: 0.75em;
 	}
 
-	.menu_button {
-		padding: 0px 30px 0px 0px;
+	h2 a:hover, li > a:hover {
+		border-bottom: solid 4px #227f7f;
+		transition: border-bottom ease-in-out 0.1s;
 	}
 
-	.menu_home_link {
+	h1.home_link a {
 		font-size: 1.75em;
 		color: #191919;
 		transition: color ease-in-out 0.1s;
-	}
-
-	.page_link, .menu_link {
-		color: #737373;
-	}
-
-	.page_link {
-		font-size: 1em;
-	}
-
-	.menu_link {
-		font-size: 1.5em;
-	}
-
-	.page_link, .menu_link, .menu_home_link {
-		font-family: 'Biryani', sans-serif;
-		font-style: normal;
-		font-weight: 300;
+		font-weight: 700;
+		padding-right: 0.5em;
 		text-decoration: none;
-		padding: 5px 0px 0px 0px;
 	}
 
-	.menu_link_active {
+	.home_link:hover {
+		color: #227f7f;
+	}
+
+	.social_link {
+		font-size: 1.5em;
+		padding-left: 0.25em;
+    	padding-right: 0.25em;
+	}
+
+	.link_active {
 		color: #191919;
 		border-bottom: solid 4px #227f7f;
+		font-weight: 700;
 	}
 
-	.menu_home_link:hover { color: #227f7f; }
 
-	.menu_link:hover, .page_link:hover {
-		border-bottom: solid 4px #227f7f;
-		transition: border-bottom ease-in-out 0.1s;
+
+
+
+		/*!
+	* Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com
+	* License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+	*/
+	.fab {
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		display: inline-block;
+		font-style: normal;
+		font-variant: normal;
+		text-rendering: auto;
+		line-height: 1;
+	}
+	
+	
+	/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen readers do not read off random characters that represent icons */
+	.fa-github-alt:before { content: "\f113"; }
+	
+	.fa-google:before { content: "\f1a0"; }
+	
+	.fa-linkedin-in:before { content: "\f0e1"; }
+	
+	.fa-twitter:before { content: "\f099"; }
+	
+	.sr-only {
+		border: 0;
+		clip: rect(0, 0, 0, 0);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+	}
+  
+	.sr-only-focusable:active, .sr-only-focusable:focus {
+		clip: auto;
+		height: auto;
+		margin: 0;
+		overflow: visible;
+		position: static;
+		width: auto;
+	}
+  
+  
+	@font-face {
+		font-family: 'Font Awesome 5 Brands';
+		font-style: normal;
+		font-weight: 400;
+		font-display: block;
+		src: url("../static/webfonts/fa-brands-400.eot");
+		src: url("../static/webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("../static/webfonts/fa-brands-400.woff2") format("woff2"), url("../static/webfonts/fa-brands-400.woff") format("woff"), url("../static/webfonts/fa-brands-400.ttf") format("truetype"), url("../static/webfonts/fa-brands-400.svg#fontawesome") format("svg");
+	}
+  
+	.fab {
+		font-family: 'Font Awesome 5 Brands';
+		font-weight: 400;
+	}
+
+	@font-face {
+		font-family: 'Font Awesome 5 Free';
+		font-style: normal;
+		font-weight: 400;
+		font-display: block;
+		src: url("../static/webfonts/fa-regular-400.eot");
+		src: url("../static/webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("../static/webfonts/fa-regular-400.woff2") format("woff2"), url("../static/webfonts/fa-regular-400.woff") format("woff"), url("../static/webfonts/fa-regular-400.ttf") format("truetype"), url("../static/webfonts/fa-regular-400.svg#fontawesome") format("svg");
 	}
 </style>
