@@ -4,8 +4,7 @@
 
 	import stories from "../../static/data/stories.json";
 
-	import { jokes } from "../../static/data/jokes.json";
-	let randNum = Math.floor(Math.random() * jokes.length);
+	import { getJokeFooter } from "../../helpers";
 </script>
 
 <Header activePage="projects" />
@@ -16,4 +15,4 @@
 	</section>
 </main>
 
-<Footer {randNum} />
+<Footer jokeFooter={getJokeFooter()} />

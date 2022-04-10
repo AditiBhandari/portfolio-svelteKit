@@ -8,10 +8,9 @@
 	// export let footerJoke = footerOptions[footerRandomiser];
 	// export let footerJoke = "";
 
-	export let randNum;
-	console.log(randNum);
+	export let jokeFooter;
 </script>
 
 <footer>
-	<p>{jokes[randNum]}</p>
+	<p>{jokeFooter}</p>
 </footer>

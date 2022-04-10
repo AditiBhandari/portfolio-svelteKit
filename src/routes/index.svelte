@@ -2,10 +2,9 @@
 	import Header from "$lib/Header.svelte";
 	import Footer from "$lib/Footer.svelte";
 
-	import "../styles/global.css";
+	import { getJokeFooter } from "../helpers";
 
-	import { jokes } from "../static/data/jokes.json";
-	let randNum = Math.floor(Math.random() * jokes.length);
+	import "../styles/global.css";
 </script>
 
 <Header activePage={null} />
@@ -75,7 +74,7 @@
 	</p>
 </main>
 
-<Footer {randNum} />
+<Footer jokeFooter={getJokeFooter()} />
 
 <style>
 	section {
