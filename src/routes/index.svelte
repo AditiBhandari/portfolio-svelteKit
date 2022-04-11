@@ -2,10 +2,10 @@
 	import Header from "$lib/Header.svelte";
 	import Footer from "$lib/Footer.svelte";
 
-	import '../styles/global.css';
+	import "../styles/global.css";
 </script>
 
-<Header workActive="" projectsActive="link_active"/>
+<Header activePage={null} />
 
 <main>
 	<section class="intro">
@@ -16,8 +16,8 @@
 				target="_blank"
 				rel="noopener noreferrer">Reuters</a
 			>
-			in Mumbai. I'm a newly-minted Brit living in India, and previously
-			worked at the Hindustan Times in India, and at
+			in Mumbai. I'm a newly-minted Brit living in India, and previously worked
+			at the Hindustan Times in India, and at
 			<a
 				class="intro_link"
 				href="https://wamu.org/search/go?q=aditi%20bhandari"
@@ -36,9 +36,16 @@
 				href="https://slides.com/aditibhandari/spotlight#/15"
 				target="_blank"
 				rel="noopener noreferrer">The Boston Globe</a
-			> after graduating from Northwestern University in 2017, where I was a Knight Lab student fellow.
+			> after graduating from Northwestern University in 2017, where I was
+			a Knight Lab student fellow.
 		</p>
-		<p>When I'm not researching web accessibility or good-naturedly cursing the inventor of [insert programming language here], I'm either watching food documentaries or listening to pop culture podcasts. Check out some of my work and projects below, and drop me a line if you want to reach out!</p>
+		<p>
+			When I'm not researching web accessibility or good-naturedly cursing
+			the inventor of [insert programming language here], I'm either
+			watching food documentaries or listening to pop culture podcasts.
+			Check out some of my work and projects below, and drop me a line if
+			you want to reach out!
+		</p>
 	</section>
 
 	<section class="favouriteWork">
@@ -49,14 +56,23 @@
 		<h3>my favourite work</h3>
 	</section>
 
-	<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum fuga aut, fugit soluta rem molestias, voluptates nihil minus vel aliquam amet repudiandae. Qui quo excepturi eos, explicabo iure debitis ea quidem perspiciatis at aliquid necessitatibus similique vel, vero doloribus delectus consequatur inventore cupiditate quaerat quis aliquam. Quidem eum fugiat est aut dolore! Iure aut dignissimos fugit inventore consequuntur tenetur asperiores, molestiae voluptatem, odit quis doloribus autem? Sit vitae consequatur vel exercitationem nihil odit fuga in. Expedita nesciunt saepe molestiae soluta error ipsa possimus consectetur voluptates officiis libero qui quod sapiente, quasi vero repudiandae pariatur doloremque maxime architecto porro consequuntur laudantium.</p>
+	<p>
+		Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum fuga
+		aut, fugit soluta rem molestias, voluptates nihil minus vel aliquam amet
+		repudiandae. Qui quo excepturi eos, explicabo iure debitis ea quidem
+		perspiciatis at aliquid necessitatibus similique vel, vero doloribus
+		delectus consequatur inventore cupiditate quaerat quis aliquam. Quidem
+		eum fugiat est aut dolore! Iure aut dignissimos fugit inventore
+		consequuntur tenetur asperiores, molestiae voluptatem, odit quis
+		doloribus autem? Sit vitae consequatur vel exercitationem nihil odit
+		fuga in. Expedita nesciunt saepe molestiae soluta error ipsa possimus
+		consectetur voluptates officiis libero qui quod sapiente, quasi vero
+		repudiandae pariatur doloremque maxime architecto porro consequuntur
+		laudantium.
+	</p>
 </main>
 
-
-
 <Footer />
-
-
 
 <style>
 	section {
@@ -81,8 +97,6 @@
 		font-family: "Biryani", sans-serif;
 	}
 
-
-
 	/* .intro {
 		margin: 20px auto;
 	}
@@ -96,5 +110,4 @@
 	.favouriteProjects {
 		background-color: lightpink;
 	} */
-
 </style>
