@@ -2,6 +2,8 @@
 	import Header from "$lib/Header.svelte";
 	import Footer from "$lib/Footer.svelte";
 
+	import { getJokeFooter } from "../helpers";
+
 	import "../styles/global.css";
 </script>
 
@@ -72,7 +74,7 @@
 	</p>
 </main>
 
-<Footer />
+<Footer jokeFooter={getJokeFooter()} />
 
 <style>
 	section {

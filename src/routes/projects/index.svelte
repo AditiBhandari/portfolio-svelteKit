@@ -1,6 +1,10 @@
 <script>
 	import Header from "$lib/Header.svelte";
 	import Footer from "$lib/Footer.svelte";
+
+	import stories from "../../static/data/stories.json";
+
+	import { getJokeFooter } from "../../helpers";
 </script>
 
 <Header activePage="projects" />
@@ -11,4 +15,4 @@
 	</section>
 </main>
 
-<Footer />
+<Footer jokeFooter={getJokeFooter()} />
